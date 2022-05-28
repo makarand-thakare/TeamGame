@@ -13,7 +13,7 @@ Play fun and productive games with your office team, friends and family.
 #### Shuffled Word
 - You will be presented with a shuffled word. 
 
-- Find the original word before time runs out :)
+- You have to find the original word before time runs out :)
 ```kotlin
 // In main method
 ShuffleGame(Difficulty.EASY, 10).start()
@@ -23,7 +23,7 @@ ShuffleGame(Difficulty.EASY, 10).start()
 #### Fourth Number
 - You will be presented with three related numbers. 
 
-- Find the fourth number before time runs out :D
+- You have to find the fourth number before time runs out :D
 ```kotlin
 // In main method
 FourthNumber(Difficulty.EASY, 10).start()
