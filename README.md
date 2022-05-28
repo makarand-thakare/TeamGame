@@ -31,7 +31,7 @@ FourthNumber(Difficulty.EASY, 10).start()
 
 ## Make it FUNn...
 
-- Create a table in Google sheets with 5 rounds.
+- Create a score table in Google sheets with 5 rounds.
 - Whoever gets more points wins. 
 - In case of tie, those players will play again.
 
