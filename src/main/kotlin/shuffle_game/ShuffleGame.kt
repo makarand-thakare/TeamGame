@@ -1,7 +1,11 @@
 package shuffle_game
 
-class ShuffleGame {
-    private val waitForTime = 10
+import fourth_number.Difficulty
+
+class ShuffleGame(
+    private val difficulty: Difficulty = Difficulty.EASY,
+    private val countDownTimeInSeconds: Int = 7
+) {
     private lateinit var selectedWord: String
 
     fun start() {
@@ -14,16 +18,40 @@ class ShuffleGame {
     private fun printShuffledWord() {
         val words = WordBank().giveMeWords()
 
-        val randomNum = (0 until words.size).random()
-
-        selectedWord = words[randomNum]
+        if (difficulty == Difficulty.EASY) {
+            do {
+                val randomNum = (0 until words.size).random()
+                selectedWord = words[randomNum]
+            } while (selectedWord.length > 3)
+        } else if (difficulty == Difficulty.NORMAL) {
+            do {
+                val randomNum = (0 until words.size).random()
+                selectedWord = words[randomNum]
+            } while (selectedWord.length > 4)
+        } else if (difficulty == Difficulty.HARD) {
+            do {
+                val randomNum = (0 until words.size).random()
+                selectedWord = words[randomNum]
+            } while (selectedWord.length > 5)
+        } else if (difficulty == Difficulty.BERSERKER) {
+            val randomNum = (0 until words.size).random()
+            selectedWord = words[randomNum]
+        } else if (difficulty == Difficulty.GOD_MODE) {
+            do {
+                val randomNum = (0 until words.size).random()
+                selectedWord = words[randomNum]
+            } while (selectedWord.length < 10)
+        } else {
+            val randomNum = (0 until words.size).random()
+            selectedWord = words[randomNum]
+        }
 
         println(shuffle(selectedWord))
     }
 
     private fun startTimer() {
         Thread.sleep(1000)
-        for (i in 1..waitForTime) {
+        for (i in 1..countDownTimeInSeconds) {
             println(i)
             Thread.sleep(1000)
         }

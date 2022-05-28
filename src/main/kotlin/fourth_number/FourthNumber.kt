@@ -1,8 +1,10 @@
 package fourth_number
 
-class FourthNumber(private val difficulty: Difficulty = Difficulty.EASY) {
+class FourthNumber(
+    private val difficulty: Difficulty = Difficulty.EASY,
+    private val countDownTimeInSeconds: Int = 7
+) {
 
-    private val waitForTimeSecond: Int = 2
 
     /**
      * How to play?
@@ -127,7 +129,7 @@ class FourthNumber(private val difficulty: Difficulty = Difficulty.EASY) {
     private fun startTimer() {
 
         Thread.sleep(1000)
-        val waitForTime = waitForTimeSecond
+        val waitForTime = countDownTimeInSeconds
         for (i in 1..waitForTime) {
             println(i)
             Thread.sleep(1000)
